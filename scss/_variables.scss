@@ -17,6 +17,11 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
 
+$bkus-gray: #DEDEDC !default;
+$bkus-dark-gray: #585e62 !default;
+$bkus-black: #373e42;
+$bkus-red: #ce043f !default;
+
 // fusv-disable
 $grays: (
   "100": $gray-100,
@@ -58,7 +63,7 @@ $colors: (
   "gray-dark":  $gray-800
 ) !default;
 
-$primary:       $blue !default;
+$primary:       $bkus-red !default;
 $secondary:     $gray-600 !default;
 $success:       $green !default;
 $info:          $cyan !default;
@@ -68,7 +73,7 @@ $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
 
 $theme-colors: (
-  "primary":    $primary,
+  "primary":    $bkus-red,
   "secondary":  $secondary,
   "success":    $success,
   "info":       $info,
@@ -241,8 +246,8 @@ $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) 
 //
 // Settings for the `<body>` element.
 
-$body-bg:                   $white !default;
-$body-color:                $gray-900 !default;
+$body-bg:                   $bkus-gray !default;
+$body-color:                $bkus-dark-gray !default;
 $body-text-align:           null !default;
 
 
@@ -250,8 +255,9 @@ $body-text-align:           null !default;
 //
 // Style anchor elements.
 
-$link-color:                              $primary !default;
-$link-decoration:                         underline !default;
+$link-color:                              $bkus-red !default;
+$link-decoration:                         none !default;
+$link-hover-decoration:                   underline !default;
 $link-hover-color:                        darken($link-color, 15%) !default;
 $link-hover-decoration:                   null !default;
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
@@ -374,7 +380,8 @@ $embed-responsive-aspect-ratios: (
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+// $font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-sans-serif:      Ubuntu, Arial, sans-serif !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:            var(--bs-font-sans-serif) !default;
 // stylelint-enable value-keyword-case
@@ -382,7 +389,7 @@ $font-family-base:            var(--bs-font-sans-serif) !default;
 // $font-size-root effects the value of `rem`, which is used for as well font sizes, paddings and margins
 // $font-size-base effects the font size of the body text
 $font-size-root:              null !default;
-$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-base:              0.88rem !default; // Assumes the browser default, typically `16px`
 $font-size-sm:                $font-size-base * .875 !default;
 $font-size-lg:                $font-size-base * 1.25 !default;
 
@@ -1238,3 +1245,4 @@ $kbd-color:                         $white !default;
 $kbd-bg:                            $gray-900 !default;
 
 $pre-color:                         null !default;
+
